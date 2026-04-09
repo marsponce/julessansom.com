@@ -1,6 +1,6 @@
-# tobytran.art
+# julessansom.com
 
-Portfolio, gallery, and blog site for artist Toby Tran. Built with Next.js and TypeScript, hosted on Netlify, with content managed via Decap CMS.
+Portfolio, gallery, and blog site for photographer and mixed media artist Jules Ferguson. Built with Next.js and TypeScript, hosted on Netlify, with content managed via Decap CMS.
 
 ## Tech Stack
 
