@@ -1,0 +1,58 @@
+/* /src/styles/global.css */
+
+*,
+*::before,
+*::after {
+  /* reset all styles */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Color scheme variables */
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-accent: #999999;
+  --color-border: #e0e0e0;
+
+  /* Typography */
+  --font-body: system-ui, sans-serif;
+  --font-heading: system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+}
+
+.sr-only {
+  /*screen reader only */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wip {
+  h1,
+  p {
+    text-align: center;
+  }
+}
