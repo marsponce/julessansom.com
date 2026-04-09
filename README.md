@@ -11,7 +11,7 @@ Portfolio, gallery, and blog site for photographer and mixed media artist Jules 
 
 ## Project Status
 
-See the [project board](https://github.com/users/marsponce/projects/15) for active development tickets.
+See the [project board](https://github.com/users/marsponce/projects/16) for active development tickets.
 
 <details>
 <summary><h2>Local Development</h2></summary>
