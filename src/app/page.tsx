@@ -8,8 +8,8 @@ export default function Index() {
       <p>This site is currently under construction.</p>
       <p>
         please direct any questions to{' '}
-        <a className="italic" href="mailto://info@julessansom.com">
-          info@julessansom.com
+        <a className="italic" href="mailto://hello@julessansom.com">
+          hello@julessansom.com
         </a>
         .
       </p>
