@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'julessansom.com',
+  title: {
+    template: '%s - Jules Sansom',
+    default: 'Jules Sansom',
+  },
   description: "Jules Sansom's artist site",
 };
 

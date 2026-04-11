@@ -1,4 +1,9 @@
-// /src/app/page.tsx
+// /src/app/(site)/cv/page.tsx
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'CV',
+};
 
 export default function Index() {
   return (
