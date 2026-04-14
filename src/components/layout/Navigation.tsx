@@ -56,19 +56,33 @@ export function Nav() {
     };
   }, [isOpen]);
 
+  const [hasLoaded, setHasLoaded] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHasLoaded(true);
+    }, 5000); // delay before fade-in (adjust to taste)
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className={clsx(styles.nav, isOpen ? styles.navOpen : '')}>
-      <button onClick={() => setIsOpen(!isOpen)}>
-        <span className={styles.iconClose}>
-          <IoCloseOutline size={32} />
+      <div className={styles.navUi}>
+        <span
+          className={styles.enterSite}
+          data-visible={isIndex && !isOpen && hasLoaded}
+        >
+          enter site <IoArrowForwardOutline />
         </span>
-        <span className={styles.iconMenu}>
-          <IoMenuOutline size={32} />
-        </span>
-      </button>
-      <span className={styles.enterSite} data-visible={isIndex && !isOpen}>
-        enter site <IoArrowForwardOutline />
-      </span>
+        <button onClick={() => setIsOpen(!isOpen)}>
+          <span className={styles.iconClose}>
+            <IoCloseOutline />
+          </span>
+          <span className={styles.iconMenu}>
+            <IoMenuOutline />
+          </span>
+        </button>
+      </div>
       <nav>
         <ul>
           {NavLinks.map(({ href, label, icon }) => {

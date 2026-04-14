@@ -13,33 +13,63 @@
     background: var(--color-background-alt);
     pointer-events: none;
   }
-  button {
+
+  .navUi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     z-index: 11;
     position: fixed;
     top: 1rem;
     right: 1rem;
-    height: 3rem;
-    width: 3rem;
-    background: none;
-    border: none;
+    font-size: 2rem;
+
     color: var(--color-accent);
-    overflow: visible;
-    display: grid;
-    place-items: center;
-    span {
-      grid-area: 1 / 1;
-      transition:
-        opacity 1s,
-        rotate 0.3s;
+
+    button {
+      background: none;
+      border: none;
+      color: var(--color-accent);
+      overflow: visible;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+
+      span {
+        grid-area: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          transition:
+            opacity 1s,
+            rotate 0.3s;
+          align-items: center;
+        }
+      }
+
+      .iconClose svg {
+        opacity: 0;
+        rotate: 90deg;
+      }
+
+      .iconMenu svg {
+        opacity: 1;
+      }
     }
 
-    .iconClose {
+    .enterSite {
+      overflow: visible;
+      transition: opacity 1s;
       opacity: 0;
-      rotate: 90deg;
-    }
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
 
-    .iconMenu {
-      opacity: 1;
+      &[data-visible='true'] {
+        opacity: 1;
+      }
     }
   }
 
@@ -65,43 +95,31 @@
       }
     }
   }
-
-  .enterSite {
-    z-index: 11;
-    overflow: visible;
-    position: fixed;
-    top: 1rem;
-    right: 4.5rem;
-    transition: opacity 1s;
-    opacity: 0;
-
-    &[data-visible='true'] {
-      opacity: 1;
-    }
-  }
 }
 
 .navOpen {
   nav {
     transform: translateY(0);
     pointer-events: auto;
-  }
-  button {
-    .iconClose {
-      opacity: 1;
-      rotate: 0deg;
-    }
-    .iconMenu {
-      opacity: 0;
-    }
-  }
-  .enterSite {
-    opacity: 0;
-  }
-  ul {
-    li {
-      a {
+    ul {
+      li {
+        a {
+        }
       }
+    }
+  }
+  .navUi {
+    button {
+      .iconClose svg {
+        opacity: 1;
+        rotate: 0deg;
+      }
+      .iconMenu svg {
+        opacity: 0;
+      }
+    }
+    .enterSite {
+      opacity: 0;
     }
   }
 }
