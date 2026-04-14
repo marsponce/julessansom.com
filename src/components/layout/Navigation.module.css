@@ -132,12 +132,54 @@
     list-style: none;
     gap: 1rem;
     li {
+      position: relative;
       a {
         text-decoration: none;
         transition: color 0.3s;
       }
       a:hover {
         color: var(--color-accent);
+      }
+      .link {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+
+        .frontIcon,
+        .backIcon {
+          position: absolute;
+          inset: 0;
+          display: grid;
+          place-items: center;
+          transition: transform 0.2s ease;
+          mix-blend-mode: multiply;
+        }
+
+        /* top ink layer */
+        .frontIcon {
+          color: var(--color-primary);
+          z-index: 2;
+        }
+
+        /* offset ink layer (riso print misalignment) */
+        .backIcon {
+          color: var(--color-trinary);
+          z-index: 1;
+          transform: transform(1px, -1px);
+        }
+
+        /* hover exaggerates “print shift” */
+        &:hover {
+          .backIcon {
+            transform: translate(0.45rem, -0.45rem);
+          }
+
+          .frontIcon {
+            transform: translate(-0.1rem, 0.1rem);
+          }
+        }
       }
     }
   }

@@ -71,19 +71,24 @@ export function Nav() {
         <span
           className={styles.enterSite}
           data-visible={isIndex && !isOpen && hasLoaded}
+          aria-hidden
         >
           enter site <IoArrowForwardOutline />
         </span>
-        <button onClick={() => setIsOpen(!isOpen)}>
-          <span className={styles.iconClose}>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isOpen}
+        >
+          <span className={styles.iconClose} aria-hidden>
             <IoCloseOutline />
           </span>
-          <span className={styles.iconMenu}>
+          <span className={styles.iconMenu} aria-hidden>
             <IoMenuOutline />
           </span>
         </button>
       </div>
-      <nav>
+      <nav aria-hidden={!isOpen}>
         <ul>
           {NavLinks.map(({ href, label, icon }) => {
             const isCurrent = pathname === href;
@@ -91,7 +96,6 @@ export function Nav() {
               <li key={label}>
                 <Link
                   href={href}
-                  aria-label={label}
                   aria-current={isCurrent ? 'page' : undefined}
                   onClick={() => setIsOpen(false)}
                 >
@@ -130,8 +134,18 @@ export function Socials() {
         {SocLinks.map(({ href, label, icon }) => {
           return (
             <li key={label}>
-              <Link key={href} href={href} aria-label={label}>
-                {icon ?? label}
+              <Link
+                key={href}
+                href={href}
+                aria-label={label}
+                className={styles.link}
+              >
+                <span className={styles.frontIcon} aria-hidden>
+                  {icon ?? label}
+                </span>
+                <span className={styles.backIcon} aria-hidden>
+                  {icon ?? label}
+                </span>
               </Link>
             </li>
           );
