@@ -29,10 +29,13 @@
   .jules {
     color: var(--color-primary);
     mix-blend-mode: multiply;
+    display: inline-block;
+    transform: translateX(7%);
   }
 
   .sansom {
     color: var(--color-trinary);
+    display: inline-block;
     mix-blend-mode: multiply;
   }
 }
