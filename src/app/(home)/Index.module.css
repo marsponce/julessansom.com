@@ -1,21 +1,22 @@
 /* /src/app/(home)/Index.module.css */
 
 .index {
-  width: 100lvw;
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: clip;
+  pointer-events: none;
+  user-select: none;
   h1 {
     font-family: var(--font-title);
-    font-style: normal;
-    font-weight: 300;
-    width: fit-content;
+    font-weight: 950;
+    line-height: 0.9;
+
     pointer-events: none;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
-    line-height: 1;
-    font-size: 10rem;
+    transform: rotate(-90deg);
+    font-size: clamp(8rem, 28vw, 10rem);
+
     @media (min-width: 768px) {
       /* desktop */
       font-size: 27rem;
@@ -23,5 +24,13 @@
       left: 0;
       transform: none;
     }
+  }
+
+  .jules {
+    color: var(--color-primary);
+  }
+
+  .sansom {
+    color: var(--color-trinary);
   }
 }

@@ -57,10 +57,7 @@ export function Nav() {
   }, [isOpen]);
 
   return (
-    <nav className={clsx(styles.nav, isOpen ? styles.navOpen : '')}>
-      <span className={styles.enterSite} data-visible={isIndex && !isOpen}>
-        enter site <IoArrowForwardOutline />
-      </span>
+    <div className={clsx(styles.nav, isOpen ? styles.navOpen : '')}>
       <button onClick={() => setIsOpen(!isOpen)}>
         <span className={styles.iconClose}>
           <IoCloseOutline size={32} />
@@ -69,25 +66,29 @@ export function Nav() {
           <IoMenuOutline size={32} />
         </span>
       </button>
-
-      <ul>
-        {NavLinks.map(({ href, label, icon }) => {
-          const isCurrent = pathname === href;
-          return (
-            <li key={label}>
-              <Link
-                href={href}
-                aria-label={label}
-                aria-current={isCurrent ? 'page' : undefined}
-                onClick={() => setIsOpen(false)}
-              >
-                {icon ?? label}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+      <span className={styles.enterSite} data-visible={isIndex && !isOpen}>
+        enter site <IoArrowForwardOutline />
+      </span>
+      <nav>
+        <ul>
+          {NavLinks.map(({ href, label, icon }) => {
+            const isCurrent = pathname === href;
+            return (
+              <li key={label}>
+                <Link
+                  href={href}
+                  aria-label={label}
+                  aria-current={isCurrent ? 'page' : undefined}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {icon ?? label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </div>
   );
 }
 

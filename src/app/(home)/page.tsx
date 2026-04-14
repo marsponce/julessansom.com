@@ -5,7 +5,12 @@ export default function Index() {
   return (
     <>
       <div className={styles.index}>
-        <h1>JULES SANSOM</h1>
+        <h1>
+          <span>
+            <span className={styles.jules}>JULES</span>{' '}
+            <span className={styles.sansom}>SANSOM</span>
+          </span>
+        </h1>
       </div>
     </>
   );
