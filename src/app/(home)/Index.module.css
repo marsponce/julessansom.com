@@ -10,18 +10,17 @@
   user-select: none;
   h1 {
     font-family: var(--font-title);
+    text-align: center;
     font-weight: 950;
     line-height: 0.5;
 
     pointer-events: none;
     transform: rotate(-90deg);
-    font-size: clamp(8rem, 90vh, 10rem);
+    font-size: clamp(6rem, 20cqh, 15rem);
 
     @media (min-width: 768px) {
       /* desktop */
-      font-size: 27rem;
-      top: 0;
-      left: 0;
+      font-size: clamp(10rem, 25cqw, 30rem);
       transform: none;
     }
   }
