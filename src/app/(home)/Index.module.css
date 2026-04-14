@@ -11,11 +11,11 @@
   h1 {
     font-family: var(--font-title);
     font-weight: 950;
-    line-height: 0.9;
+    line-height: 0.5;
 
     pointer-events: none;
     transform: rotate(-90deg);
-    font-size: clamp(8rem, 28vw, 10rem);
+    font-size: clamp(8rem, 90vh, 10rem);
 
     @media (min-width: 768px) {
       /* desktop */
@@ -28,9 +28,11 @@
 
   .jules {
     color: var(--color-primary);
+    mix-blend-mode: multiply;
   }
 
   .sansom {
     color: var(--color-trinary);
+    mix-blend-mode: multiply;
   }
 }
