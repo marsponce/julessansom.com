@@ -1,5 +1,6 @@
 // /src/app/layout.tsx
 import type { Metadata } from 'next';
+import { Header, Footer, Nav, Socials } from '@/components/layout';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -17,7 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header>
+          <Nav />
+        </Header>
+        <main>{children}</main>
+        <Footer>
+          <Socials />
+        </Footer>
+      </body>
     </html>
   );
 }

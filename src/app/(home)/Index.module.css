@@ -1,0 +1,15 @@
+/* /src/app/(home)/Index.module.css */
+
+.index {
+  h1 {
+    padding: 1rem;
+    padding-top: 5rem;
+    width: 100lvw;
+    line-height: 1;
+    font-size: 8rem;
+    @media (min-width: 768px) {
+      /* desktop */
+      font-size: 20rem;
+    }
+  }
+}

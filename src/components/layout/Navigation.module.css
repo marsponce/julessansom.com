@@ -1,0 +1,111 @@
+/* /src/components/layout/Navigation.module.css */
+
+.nav {
+  /* nav bar base styles */
+  font-size: 2rem;
+  height: 0vh;
+  width: 100lvw;
+  overflow: hidden;
+  transition: height 1s;
+  background: var(--color-background-alt);
+  button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 3rem;
+    width: 3rem;
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    overflow: visible;
+    display: grid;
+    place-items: center;
+    span {
+      grid-area: 1 / 1;
+      transition:
+        opacity 1s,
+        rotate 0.3s;
+    }
+
+    .iconClose {
+      opacity: 0%;
+      rotate: 90deg;
+    }
+
+    .iconMenu {
+      opacity: 100%;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+    height: 100lvh;
+    padding-left: 1rem;
+    li {
+      a {
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      a:hover {
+        color: var(--color-accent);
+      }
+      a[aria-current='page'] {
+        color: var(--color-accent);
+        font-weight: bold;
+      }
+    }
+  }
+  .enterSite {
+    overflow: visible;
+    position: absolute;
+    top: 1rem;
+    right: 4.5rem;
+    transition: opacity 1s;
+    opacity: 0;
+
+    &[data-visible='true'] {
+      opacity: 1;
+    }
+  }
+}
+
+.navOpen {
+  height: 100lvh;
+  button {
+    .iconClose {
+      opacity: 100%;
+      rotate: 0deg;
+    }
+    .iconMenu {
+      opacity: 0%;
+    }
+  }
+  ul {
+    li {
+      a {
+      }
+    }
+  }
+}
+
+.soc {
+  /* social media footer */
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+    li {
+      a {
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      a:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+}

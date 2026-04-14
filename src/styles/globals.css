@@ -12,6 +12,7 @@
 :root {
   /* Color scheme variables */
   --color-background: #fafafa;
+  --color-background-alt: #f0e3c5;
   --color-text: #000000;
   --color-accent: #2f805b;
   --color-secondary: #aed3b0;
@@ -32,14 +33,11 @@ body {
 /* global layout styling */
 html {
   min-height: 100lvh;
-  overflow-x: clip;
   @media (min-width: 768px) {
-    overflow-y: clip;
   }
 }
 body {
   min-height: 100lvh;
-  overflow-x: clip;
   display: flex;
   flex-direction: column;
 }
@@ -50,11 +48,6 @@ main {
 
 a {
   color: var(--color-secondary);
-}
-
-footer {
-  position: sticky;
-  bottom: 0;
 }
 
 .sr-only {
