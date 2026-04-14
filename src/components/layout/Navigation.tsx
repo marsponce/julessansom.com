@@ -49,20 +49,20 @@ export function Nav() {
   const isIndex = pathname === '/';
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
-
   const [hasLoaded, setHasLoaded] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setHasLoaded(true);
-    }, 5000); // delay before fade-in (adjust to taste)
+    const visited = localStorage.getItem('visited');
 
-    return () => clearTimeout(timer);
+    if (!visited || Date.now() > Number(visited)) {
+      const timer = setTimeout(() => {
+        setHasLoaded(true);
+        localStorage.setItem(
+          'visited',
+          String(Date.now() + 24 * 60 * 60 * 1000)
+        );
+      }, 5000); // delay before fade-in (adjust to taste)
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (
