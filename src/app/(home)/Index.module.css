@@ -1,15 +1,27 @@
 /* /src/app/(home)/Index.module.css */
 
 .index {
+  width: 100lvw;
+  flex: 1;
+  overflow: clip;
   h1 {
-    padding: 1rem;
-    padding-top: 5rem;
-    width: 100lvw;
+    font-family: var(--font-title);
+    font-style: normal;
+    font-weight: 300;
+    width: fit-content;
+    pointer-events: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
     line-height: 1;
-    font-size: 8rem;
+    font-size: 10rem;
     @media (min-width: 768px) {
       /* desktop */
-      font-size: 20rem;
+      font-size: 27rem;
+      top: 0;
+      left: 0;
+      transform: none;
     }
   }
 }

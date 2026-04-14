@@ -1,6 +1,7 @@
 // /src/app/layout.tsx
 import type { Metadata } from 'next';
 import { Header, Footer, Nav, Socials } from '@/components/layout';
+import Paper from '@/assets/Paper';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Paper />
         <Header>
           <Nav />
         </Header>

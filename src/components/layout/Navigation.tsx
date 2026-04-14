@@ -58,7 +58,7 @@ export function Nav() {
 
   return (
     <nav className={clsx(styles.nav, isOpen ? styles.navOpen : '')}>
-      <span className={styles.enterSite} data-visible={isIndex}>
+      <span className={styles.enterSite} data-visible={isIndex && !isOpen}>
         enter site <IoArrowForwardOutline />
       </span>
       <button onClick={() => setIsOpen(!isOpen)}>

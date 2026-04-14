@@ -11,16 +11,18 @@
 
 :root {
   /* Color scheme variables */
-  --color-background: #fafafa;
-  --color-background-alt: #f0e3c5;
+  --color-background: #efe4c7;
+  --color-background-alt: #e9d19f;
   --color-text: #000000;
-  --color-accent: #2f805b;
+  --color-accent: #637b5c;
+  --color-primary: #2f805b;
   --color-secondary: #aed3b0;
   --color-border: #e0e0e0;
 
   /* Typography */
   --font-body: system-ui, sans-serif;
   --font-heading: system-ui, sans-serif;
+  --font-title: system-ui, sans-serif;
 }
 
 body {
@@ -30,24 +32,35 @@ body {
   line-height: 1.6;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-style: bold;
+}
+
 /* global layout styling */
 html {
-  min-height: 100lvh;
+  min-height: 100dvh;
   @media (min-width: 768px) {
   }
 }
 body {
-  min-height: 100lvh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
 
 main {
   flex: 1;
+  display: flex;
 }
 
 a {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .sr-only {

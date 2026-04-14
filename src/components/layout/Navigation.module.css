@@ -28,12 +28,12 @@
     }
 
     .iconClose {
-      opacity: 0%;
+      opacity: 0;
       rotate: 90deg;
     }
 
     .iconMenu {
-      opacity: 100%;
+      opacity: 1;
     }
   }
   ul {
@@ -76,12 +76,15 @@
   height: 100lvh;
   button {
     .iconClose {
-      opacity: 100%;
+      opacity: 1;
       rotate: 0deg;
     }
     .iconMenu {
-      opacity: 0%;
+      opacity: 0;
     }
+  }
+  .enterSite {
+    opacity: 0;
   }
   ul {
     li {
