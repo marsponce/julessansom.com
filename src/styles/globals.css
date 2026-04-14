@@ -11,9 +11,10 @@
 
 :root {
   /* Color scheme variables */
-  --color-background: #ffffff;
+  --color-background: #fafafa;
   --color-text: #000000;
-  --color-accent: #999999;
+  --color-accent: #2f805b;
+  --color-secondary: #aed3b0;
   --color-border: #e0e0e0;
 
   /* Typography */
@@ -28,8 +29,27 @@ body {
   line-height: 1.6;
 }
 
+/* global layout styling */
+html {
+  min-height: 100lvh;
+  overflow-x: clip;
+  @media (min-width: 768px) {
+    overflow-y: clip;
+  }
+}
+body {
+  min-height: 100lvh;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 a {
-  color: var(--color-accent);
+  color: var(--color-secondary);
 }
 
 footer {
