@@ -140,6 +140,9 @@ export function Socials() {
                 aria-label={label}
                 className={styles.link}
               >
+                <span className={styles.sizeIcon} aria-hidden>
+                  {icon ?? label}
+                </span>
                 <span className={styles.frontIcon} aria-hidden>
                   {icon ?? label}
                 </span>

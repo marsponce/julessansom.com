@@ -133,27 +133,27 @@
     gap: 1rem;
     li {
       position: relative;
-      a {
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-      a:hover {
-        color: var(--color-accent);
-      }
-      .link {
+      a.link {
         position: relative;
-        width: 44px;
-        height: 44px;
-        display: grid;
+        display: inline-grid;
         place-items: center;
+
+        vertical-align: middle;
+        .sizeIcon {
+          visibility: hidden;
+          white-space: nowrap;
+          font-size: inherit;
+          font-family: inherit;
+          vertical-align: middle;
+        }
 
         .frontIcon,
         .backIcon {
           position: absolute;
           inset: 0;
-          display: grid;
           place-items: center;
           transition: transform 0.2s ease;
+          vertical-align: middle;
           mix-blend-mode: multiply;
         }
 
