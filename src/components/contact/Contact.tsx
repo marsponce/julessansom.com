@@ -14,7 +14,7 @@ export default function Contact() {
       if (typeof value === 'string') params.append(key, value);
     });
 
-    await fetch('/', {
+    await fetch('/__forms.html', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: params.toString(),
@@ -27,8 +27,7 @@ export default function Contact() {
     <div className={styles.contact}>
       <div className={styles.spacer} />
       {!submitted ? (
-        <form data-netlify="true" name="contact" onSubmit={handleSubmit}>
-          <input type="hidden" name="form-name" value="contact" />
+        <form name="contact" onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <input
               type="text"
