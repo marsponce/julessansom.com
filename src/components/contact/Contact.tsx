@@ -28,6 +28,7 @@ export default function Contact() {
       <div className={styles.spacer} />
       {!submitted ? (
         <form name="contact" onSubmit={handleSubmit}>
+          <input type="hidden" name="form-name" value="contact" />
           <div className={styles.formGroup}>
             <input
               type="text"
