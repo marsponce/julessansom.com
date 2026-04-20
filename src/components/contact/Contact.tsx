@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styles from './Contact.module.css';
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(true);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -63,9 +63,14 @@ export default function Contact() {
           <input type="submit" value="Submit" />
         </form>
       ) : (
-        <p className={styles.successMessage}>
-          Message Received. I&apos;ll be in touch soon!
-        </p>
+        <div className={styles.successMessage}>
+          <h2>
+            <span className={styles.message}>MESSAGE</span>{' '}
+            <span className={styles.received}>RECEIVED</span>
+          </h2>
+          <br />
+          <p>I&apos;ll be in touch soon!</p>
+        </div>
       )}
       <div className={styles.spacer} />
     </div>

@@ -110,13 +110,43 @@
       transition: color 0.3s ease-in;
     }
   }
-  .successMessage {
-    flex: 1;
-    color: var(--color-primary);
-    text-align: center;
-  }
 
   .spacer {
     flex: 1;
+  }
+
+  .successMessage {
+    flex: 1;
+    text-align: center;
+
+    h2 {
+      font-family: var(--font-title);
+      text-align: center;
+      font-weight: 950;
+      line-height: 0.5;
+
+      pointer-events: none;
+      transform: rotate(-90deg);
+      font-size: clamp(3rem, 20cqh, 10rem);
+
+      @media (min-width: 768px) {
+        /* desktop */
+        font-size: clamp(5rem, 25cqw, 15rem);
+        transform: none;
+      }
+
+      span.message {
+        color: var(--color-accent);
+        mix-blend-mode: multiply;
+        display: inline-block;
+        transform: translateX(7%);
+      }
+
+      span.received {
+        color: var(--color-trinary);
+        display: inline-block;
+        mix-blend-mode: multiply;
+      }
+    }
   }
 }
