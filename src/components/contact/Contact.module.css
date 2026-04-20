@@ -1,0 +1,122 @@
+/* /src/components/contact/Contact.module.css */
+.contact {
+  display: flex;
+  form {
+    flex: 2;
+    display: block;
+    text-align: left;
+
+    div.formGroup {
+      margin: 0;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      height: auto;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    textarea {
+      width: 100%;
+      border-radius: 10px;
+      resize: vertical;
+      border: 2px solid var(--color-primary);
+      background-color: transparent;
+      color: var(--color-text);
+      padding: 1rem;
+    }
+
+    textarea {
+      min-height: 10rem;
+      /* Disable resizing */
+      resize: none;
+    }
+
+    label {
+      position: relative;
+      height: 0;
+      width: 0;
+      top: -2.5rem;
+      left: 1rem;
+      color: var(--color-primary);
+      transition: 0.1s ease-in;
+      /* Prevent the label from being selected */
+      user-select: none;
+      z-index: -1;
+    }
+
+    /* The label after the textarea must be translated further */
+    label#message {
+      position: relative;
+      top: -9.5rem;
+    }
+
+    input,
+    textarea {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Translate the label when the input is focused */
+    input:focus + label {
+      top: -3.5rem;
+      left: 1rem;
+      font-size: 0.6rem;
+      transition: 0.2s ease-in;
+    }
+
+    input:not(:placeholder-shown) + label {
+      top: -3.5rem;
+      left: 1rem;
+      font-size: 0.6rem;
+      transition: 0.1s ease-in;
+    }
+
+    textarea:focus + label#message {
+      top: -10.1rem;
+      left: 1rem;
+      font-size: 0.6rem;
+      transition: 0.1s ease-in;
+    }
+
+    textarea:not(:placeholder-shown) + label#message {
+      top: -10.1rem;
+      left: 1rem;
+      font-size: 0.6rem;
+      transition: 0.1s ease-in;
+    }
+
+    input[type='submit'] {
+      background-color: var(--color-primary);
+      color: var(--color-accent);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Lazy Dog', sans-serif;
+      transition: 0.3s ease-in;
+      display: inline-block;
+    }
+
+    input[type='submit']:hover {
+      background-color: var(--color-accent);
+      color: var(--color-primary);
+      transition: color 0.3s ease-in;
+    }
+
+    /* On click, change the color of the button */
+    input[type='submit']:active {
+      background-color: var(--color-background);
+      color: var(--color-primary);
+      transition: color 0.3s ease-in;
+    }
+  }
+  .successMessage {
+    flex: 1;
+    color: var(--color-primary);
+    text-align: center;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+}
