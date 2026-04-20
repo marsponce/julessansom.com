@@ -11,14 +11,19 @@
 
 :root {
   /* Color scheme variables */
-  --color-background: #ffffff;
+  --color-background: #efe4c7;
+  --color-background-alt: #e9d19f;
   --color-text: #000000;
-  --color-accent: #999999;
-  --color-border: #e0e0e0;
+  --color-accent: #637b5c;
+  --color-primary: #22a87b;
+  --color-secondary: #224326;
+  --color-trinary: #fa5939;
+  --color-quaternary: #aed3b0;
 
-  /* Typography */
+  /* TODO: Typography */
   --font-body: system-ui, sans-serif;
   --font-heading: system-ui, sans-serif;
+  --font-title: system-ui, sans-serif;
 }
 
 body {
@@ -28,13 +33,28 @@ body {
   line-height: 1.6;
 }
 
-a {
-  color: var(--color-accent);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-style: bold;
 }
 
-footer {
-  position: sticky;
-  bottom: 0;
+/* global layout styling */
+html {
+  min-height: 100svh;
+  @media (min-width: 768px) {
+  }
+}
+body {
+  min-height: 100svh;
+}
+
+a {
+  color: var(--color-primary);
 }
 
 .sr-only {
@@ -50,9 +70,24 @@ footer {
   border: 0;
 }
 
-.wip {
+.mulberryPaper {
+  background: url('/mulberry.jpg');
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+}
+.simplePaper {
+  background: url('/paper.svg');
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+}
+.wip,
+.wip2 {
+  flex-direction: column;
   h1,
   p {
     text-align: center;
   }
+}
+.wip2 {
+  font-size: 5rem;
 }

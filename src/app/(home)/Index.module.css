@@ -1,0 +1,40 @@
+/* /src/app/(home)/Index.module.css */
+
+.index {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  pointer-events: none;
+  user-select: none;
+  h1 {
+    font-family: var(--font-title);
+    text-align: center;
+    font-weight: 950;
+    line-height: 0.5;
+
+    pointer-events: none;
+    transform: rotate(-90deg);
+    font-size: clamp(6rem, 20cqh, 15rem);
+
+    @media (min-width: 768px) {
+      /* desktop */
+      font-size: clamp(10rem, 25cqw, 30rem);
+      transform: none;
+    }
+  }
+
+  .jules {
+    color: var(--color-primary);
+    mix-blend-mode: multiply;
+    display: inline-block;
+    transform: translateX(7%);
+  }
+
+  .sansom {
+    color: var(--color-trinary);
+    display: inline-block;
+    mix-blend-mode: multiply;
+  }
+}

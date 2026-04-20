@@ -1,5 +1,9 @@
+// /src/app/layout.tsx
 import type { Metadata } from 'next';
+import { Header, Footer, Nav, Socials } from '@/components/layout';
+import clsx from 'clsx';
 import '@/styles/globals.css';
+import styles from './layout.module.css';
 
 export const metadata: Metadata = {
   title: {
@@ -16,7 +20,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={clsx(styles.layout)}>
+        <div className={clsx(styles.paperOverlay, 'mulberryPaper')} />
+        <div className={clsx(styles.paperOverlay, 'simplePaper')} />
+        <Header>
+          <Nav />
+        </Header>
+        <main>{children}</main>
+        <Footer>
+          <Socials />
+        </Footer>
+      </body>
     </html>
   );
 }
