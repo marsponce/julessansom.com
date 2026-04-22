@@ -24,12 +24,12 @@ export default function RootLayout({
         <div className={clsx(styles.paperOverlay, 'mulberryPaper')} />
         <div className={clsx(styles.paperOverlay, 'simplePaper')} />
         <Header>
-          <Nav />
+          <Nav>
+            <Socials />
+          </Nav>
         </Header>
         <main>{children}</main>
-        <Footer>
-          <Socials />
-        </Footer>
+        <Footer></Footer>
       </body>
     </html>
   );
