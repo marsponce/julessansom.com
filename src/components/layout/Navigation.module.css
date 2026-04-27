@@ -36,6 +36,7 @@
       box-shadow:
         inset 0 0 1rem 2rem var(--color-background),
         0 0 1rem 1rem var(--color-background);
+      transition: box-shadow 1.45s ease;
       background: transparent;
       border: none;
       color: var(--color-accent);
@@ -64,6 +65,13 @@
 
       .iconMenu svg {
         opacity: 1;
+      }
+
+      &[data-open='true'] {
+        box-shadow:
+          inset 0 0 1rem 2rem transparent,
+          0 0 1rem 1rem transparent;
+        transition: box-shadow 0.15s;
       }
     }
 

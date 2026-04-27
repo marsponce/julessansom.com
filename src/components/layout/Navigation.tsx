@@ -90,6 +90,7 @@ export function Nav({ className, children }: NavProps) {
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
+          data-open={isOpen}
         >
           <span className={styles.iconClose} aria-hidden>
             <IoCloseOutline />
