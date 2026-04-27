@@ -2,9 +2,14 @@
 'use client';
 import { useState } from 'react';
 import styles from './Contact.module.css';
+import clsx from 'clsx';
 
-export default function Contact() {
-  const [submitted, setSubmitted] = useState(true);
+type ContactProps = {
+  className?: string;
+};
+
+export default function Contact({ className }: ContactProps) {
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,8 +29,7 @@ export default function Contact() {
   };
 
   return (
-    <div className={styles.contact}>
-      <div className={styles.spacer} />
+    <div className={clsx(styles.contact, className ?? '')}>
       {!submitted ? (
         <form name="contact" onSubmit={handleSubmit}>
           <input type="hidden" name="form-name" value="contact" />
@@ -60,19 +64,15 @@ export default function Contact() {
             />
             <label id={styles.message}>Message</label>
           </div>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="SUBMIT" />
         </form>
       ) : (
         <div className={styles.successMessage}>
-          <h2>
-            <span className={styles.message}>MESSAGE</span>{' '}
-            <span className={styles.received}>RECEIVED</span>
-          </h2>
+          <h2>Message Received!</h2>
           <br />
           <p>I&apos;ll be in touch soon!</p>
         </div>
       )}
-      <div className={styles.spacer} />
     </div>
   );
 }
