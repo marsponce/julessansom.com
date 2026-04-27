@@ -1,0 +1,91 @@
+/* /src/app/(site)/contact/Contact.module.css */
+.contact {
+  flex: 1;
+  overflow-y: clip;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1rem solid transparent;
+  border-image: repeating-linear-gradient(
+      135deg,
+      var(--color-trinary) 0%,
+      var(--color-trinary) 1.25%,
+      transparent 1.25%,
+      transparent 3.75%,
+      var(--color-accent) 3.75%,
+      var(--color-accent) 6.25%,
+      transparent 6.25%,
+      transparent 8.75%,
+      var(--color-trinary) 8.75%,
+      var(--color-trinary) 10%
+    )
+    10;
+
+  @media (min-width: 768px) {
+    /* desktop */
+    flex-direction: row;
+    border-image: repeating-linear-gradient(
+        135deg,
+        var(--color-trinary) 0%,
+        var(--color-trinary) 0.625%,
+        transparent 0.625%,
+        transparent 1.875%,
+        var(--color-accent) 1.875%,
+        var(--color-accent) 3.125%,
+        transparent 3.125%,
+        transparent 4.375%,
+        var(--color-trinary) 4.375%,
+        var(--color-trinary) 5%
+      )
+      10;
+  }
+
+  .airmail {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border: 2px solid black;
+    width: 6rem;
+    height: 3rem;
+    aspect-ratio: auto;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  & > * {
+    padding: 1rem;
+  }
+
+  .contactForm {
+    flex: 3;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .contactText {
+    flex: 2;
+    text-align: center;
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+
+    h1 {
+      font-family: var(--font-title);
+      font-weight: 950;
+      @media (min-width: 768px) {
+      }
+      span.contactTitle {
+        color: var(--color-accent);
+        mix-blend-mode: multiply;
+      }
+
+      .contactMe {
+        color: var(--color-trinary);
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+}
