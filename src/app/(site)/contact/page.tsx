@@ -1,24 +1,35 @@
 // /src/app/(site)/contact/page.tsx
 
 import type { Metadata } from 'next';
+import Contact from '@/components/contact/Contact';
+import styles from './Contact.module.css';
 
 export const metadata: Metadata = {
   title: 'Contact',
 };
 
-export default function Index() {
+function ContactText() {
   return (
-    <main className="wip">
-      <h1>julessansom.com</h1>
-      <br />
-      <p>This site is currently under construction.</p>
+    <div className={styles.contactText}>
+      <h1>
+        <span className={styles.contactTitle}>CONTACT</span>{' '}
+        <span className={styles.contactMe}>ME</span>
+      </h1>
       <p>
-        please direct any questions to{' '}
-        <a className="italic" href="mailto://hello@julessansom.com">
-          hello@julessansom.com
-        </a>
-        .
+        Want to work with me? <br />
+        Let&apos;s get in touch and figure it out!
       </p>
-    </main>
+    </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <div className={styles.contact}>
+      <div className={styles.spacer} />
+      <ContactText />
+      <Contact className={styles.contactForm} />
+      <div className={styles.spacer} />
+    </div>
   );
 }

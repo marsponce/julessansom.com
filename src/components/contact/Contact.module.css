@@ -1,0 +1,118 @@
+/* /src/components/contact/Contact.module.css */
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    div.formGroup {
+      margin: 0;
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    textarea {
+      width: 100%;
+      border-radius: 0px;
+      resize: vertical;
+      border: 2px solid var(--color-accent);
+      background-color: var(--color-background);
+      color: var(--color-text);
+      padding: 1rem;
+    }
+
+    textarea {
+      min-height: 10rem;
+      /* Disable resizing */
+      resize: none;
+    }
+
+    label {
+      position: relative;
+      height: 0;
+      width: 0;
+      top: -2.5rem;
+      left: 1rem;
+      color: var(--color-accent);
+      transition: 0.1s ease-in;
+      user-select: none;
+      z-index: 1;
+    }
+
+    /* The label after the textarea must be translated further */
+    label#message {
+      position: relative;
+      top: -9.5rem;
+    }
+
+    input,
+    textarea {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Animate the label when the input is focused */
+    input:focus + label,
+    input:not(:placeholder-shown) + label,
+    textarea:focus + label#message,
+    textarea:not(:placeholder-shown) + label#message {
+      opacity: 0;
+    }
+
+    input[type='submit'] {
+      background-color: var(--color-accent);
+      color: var(--color-background);
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Lazy Dog', sans-serif;
+      transition: 0.4s ease-in;
+      display: inline-block;
+    }
+
+    input[type='submit']:hover {
+      background-color: var(--color-primary);
+    }
+  }
+
+  .successMessage {
+    flex: 1;
+    text-align: center;
+
+    h2 {
+      font-family: var(--font-title);
+      text-align: center;
+      font-weight: 950;
+      line-height: 0.5;
+
+      pointer-events: none;
+      @media (min-width: 768px) {
+        /* desktop */
+        transform: none;
+      }
+
+      span.message {
+        color: var(--color-accent);
+        mix-blend-mode: multiply;
+        display: inline-block;
+        transform: translateX(7%);
+      }
+
+      span.received {
+        color: var(--color-trinary);
+        display: inline-block;
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+}

@@ -44,7 +44,12 @@ const NavLinks = [
   },
 ] as NavLink[];
 
-export function Nav() {
+type NavProps = {
+  className?: string;
+  children: React.ReactNode;
+};
+
+export function Nav({ className, children }: NavProps) {
   const pathname = usePathname();
   const isIndex = pathname === '/';
 
@@ -66,7 +71,13 @@ export function Nav() {
   }, []);
 
   return (
-    <div className={clsx(styles.nav, isOpen ? styles.navOpen : '')}>
+    <div
+      className={clsx(
+        styles.nav,
+        isOpen ? styles.navOpen : '',
+        className ?? ''
+      )}
+    >
       <div className={styles.navUi}>
         <span
           className={styles.enterSite}
@@ -79,6 +90,7 @@ export function Nav() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
+          data-open={isOpen}
         >
           <span className={styles.iconClose} aria-hidden>
             <IoCloseOutline />
@@ -88,24 +100,27 @@ export function Nav() {
           </span>
         </button>
       </div>
-      <nav aria-hidden={!isOpen}>
-        <ul>
-          {NavLinks.map(({ href, label, icon }) => {
-            const isCurrent = pathname === href;
-            return (
-              <li key={label}>
-                <Link
-                  href={href}
-                  aria-current={isCurrent ? 'page' : undefined}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {icon ?? label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      <div className={styles.navContainer}>
+        <nav className={styles.navigation} aria-hidden={!isOpen}>
+          <ul>
+            {NavLinks.map(({ href, label, icon }) => {
+              const isCurrent = pathname === href;
+              return (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    aria-current={isCurrent ? 'page' : undefined}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {icon ?? label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+        {children}
+      </div>
     </div>
   );
 }
