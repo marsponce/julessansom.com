@@ -33,11 +33,11 @@
 
     button {
       border-radius: 50%;
-      box-shadow:
-        inset 0 0 1rem 2rem var(--color-background),
-        0 0 1rem 1rem var(--color-background);
-      transition: box-shadow 1.45s ease;
-      background: transparent;
+      box-shadow: 0 0 1rem 1rem var(--color-background);
+      transition:
+        box-shadow 1.45s ease,
+        background 1.45s ease;
+      background: var(--color-background);
       border: none;
       color: var(--color-accent);
       overflow: visible;
@@ -68,10 +68,9 @@
       }
 
       &[data-open='true'] {
-        box-shadow:
-          inset 0 0 1rem 2rem transparent,
-          0 0 1rem 1rem transparent;
+        box-shadow: 0 0 1rem 1rem transparent;
         transition: box-shadow 0.15s;
+        background: transparent;
       }
     }
 
@@ -145,10 +144,15 @@
   text-align: right;
   ul {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     list-style: none;
     gap: 1rem;
     padding-right: 1rem;
+
+    @media (min-width: 780px) {
+      flex-direction: column;
+    }
     li {
       position: relative;
       a.link {

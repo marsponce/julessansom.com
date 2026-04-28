@@ -70,6 +70,13 @@ export function Nav({ className, children }: NavProps) {
     }
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <div
       className={clsx(
