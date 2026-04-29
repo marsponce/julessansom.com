@@ -31,12 +31,14 @@
 
     button {
       border-radius: 50%;
-      box-shadow: 0 0 1rem 1rem var(--color-background);
+      box-shadow:
+        0 0 1rem 1rem var(--color-background),
+        inset 0 0 1rem 1rem var(--color-background);
+      border: none;
       transition:
         box-shadow 1.45s ease,
         background 1.45s ease;
       background: var(--color-background);
-      border: none;
       color: var(--color-accent);
       overflow: visible;
       display: grid;
@@ -85,6 +87,7 @@
       }
     }
   }
+
   .navigation {
     flex: 1;
 

@@ -16,10 +16,13 @@ collections:
         file: content/about.md
         fields:
           - { name: body, label: Body, widget: markdown }
-          - name: images
-            label: Images
-            widget: list
-            field: { name: image, label: Image, widget: image }
+          - { name: image, label: Image, widget: image }
+          - {
+              name: title,
+              label: Image Alt Text (title),
+              widget: string,
+              required: false,
+            }
 
   - name: selected-works
     label: Selected Works

@@ -70,6 +70,13 @@ a {
   border: 0;
 }
 
+img {
+}
+
+p {
+  text-align: justify;
+}
+
 .mulberryPaper {
   background: url('/mulberry.jpg');
   mix-blend-mode: multiply;
