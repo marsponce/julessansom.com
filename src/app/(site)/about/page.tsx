@@ -1,24 +1,33 @@
 // /src/app/(site)/about/page.tsx
 
 import type { Metadata } from 'next';
+import { getAbout } from '@/lib/content';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import Image from 'next/image';
+import styles from './About.module.css';
 
 export const metadata: Metadata = {
   title: 'About',
 };
 
-export default function Index() {
+export default function About() {
+  const about = getAbout();
   return (
-    <main className="wip">
-      <h1>julessansom.com</h1>
-      <br />
-      <p>This site is currently under construction.</p>
-      <p>
-        please direct any questions to{' '}
-        <a className="italic" href="mailto://hello@julessansom.com">
-          hello@julessansom.com
-        </a>
-        .
-      </p>
-    </main>
+    <>
+      <div className={styles.about}>
+        <div className={styles.frame}>
+          <Image
+            src={about.image}
+            alt={about.title ?? ''}
+            fill
+            style={{ objectFit: 'cover' }}
+            preload={true}
+          />
+        </div>
+        <div>
+          <MDXRemote source={about.content} />
+        </div>
+      </div>
+    </>
   );
 }

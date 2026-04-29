@@ -1,0 +1,32 @@
+/* app/(site)/selected-works/selected-works.module.css */
+.gallery {
+  columns: 1;
+  column-gap: 1.5rem;
+  margin: 1.5rem;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    columns: 2;
+  }
+
+  @media (min-width: 768px) {
+    columns: 3;
+  }
+
+  @media (min-width: 768px) {
+    columns: 4;
+  }
+
+  a {
+    display: block;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    isolation: isolate;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}

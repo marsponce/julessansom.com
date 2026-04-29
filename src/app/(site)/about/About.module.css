@@ -1,0 +1,24 @@
+/* /src/app/(site)/about/About.module.:css */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 10%;
+  padding-top: 20%;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 3% 10%;
+    gap: 10%;
+  }
+  div {
+    flex: 1;
+  }
+  div.frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    img {
+    }
+  }
+}
