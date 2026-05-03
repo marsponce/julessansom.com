@@ -23,7 +23,7 @@ export default async function About() {
             alt={about.title ?? ''}
             width={portrait.width}
             height={portrait.height}
-            sizes="100vw"
+            sizes="(min-width: 768px) 40vw, 100vw"
             placeholder="blur"
             blurDataURL={portrait.blurDataURL}
             preload={true}

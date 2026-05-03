@@ -37,6 +37,7 @@ export default async function Work({ params }: Props) {
             priority
             placeholder="blur"
             blurDataURL={blurDataURL}
+            quality={90}
           />
           <figcaption>
             <h1>{work.title}</h1>

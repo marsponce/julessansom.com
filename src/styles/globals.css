@@ -70,23 +70,10 @@ a {
   border: 0;
 }
 
-img {
-}
-
 p {
   text-align: justify;
 }
 
-.mulberryPaper {
-  background: url('/mulberry.jpg');
-  mix-blend-mode: multiply;
-  opacity: 0.2;
-}
-.simplePaper {
-  background: url('/paper.svg');
-  mix-blend-mode: multiply;
-  opacity: 0.2;
-}
 .wip,
 .wip2 {
   flex-direction: column;

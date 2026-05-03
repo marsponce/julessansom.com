@@ -108,6 +108,7 @@ export function Nav({ className, children }: NavProps) {
         </button>
       </div>
       <div className={styles.navContainer}>
+        <div className={styles.paperOverlay} />
         <nav className={styles.navigation} aria-hidden={!isOpen}>
           <ul>
             {NavLinks.map(({ href, label, icon }) => {

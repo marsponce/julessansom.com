@@ -31,7 +31,7 @@ export default async function SelectedWorks() {
             sizes="(max-width: 320px) 100vw, (max-width: 768px) 50vw, 33vw"
             placeholder="blur"
             blurDataURL={images[i].blurDataURL}
-            preload={true}
+            quality={70}
           />
         </Link>
       ))}

@@ -21,8 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(styles.layout)}>
-        <div className={clsx(styles.paperOverlay, 'mulberryPaper')} />
-        <div className={clsx(styles.paperOverlay, 'simplePaper')} />
+        <div className={styles.paperOverlay} />
         <Header>
           <Nav>
             <Socials />
