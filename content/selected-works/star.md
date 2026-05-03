@@ -1,6 +1,6 @@
 ---
 title: Star
-image: /images/uploads/star.jpg
+image: content/images/uploads/star.jpg
 ---
 
 This is a star.

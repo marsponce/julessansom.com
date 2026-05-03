@@ -9,11 +9,11 @@
     columns: 2;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     columns: 3;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1080px) {
     columns: 4;
   }
 
@@ -21,7 +21,6 @@
     display: block;
     break-inside: avoid;
     margin-bottom: 1.5rem;
-    isolation: isolate;
 
     img {
       width: 100%;

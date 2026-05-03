@@ -1,6 +1,6 @@
 ---
 title: Valley
-image: /images/uploads/valley.jpg
+image: content/images/uploads/valley.jpg
 ---
 
 idk

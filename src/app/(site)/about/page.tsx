@@ -5,29 +5,34 @@ import { getAbout } from '@/lib/content';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 import styles from './About.module.css';
+import { getImageData } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'About',
 };
 
-export default function About() {
+export default async function About() {
   const about = getAbout();
+  const portrait = await getImageData(about.image);
   return (
     <>
-      <div className={styles.about}>
-        <div className={styles.frame}>
+      <article className={styles.about}>
+        <figure>
           <Image
-            src={about.image}
+            src={portrait.src}
             alt={about.title ?? ''}
-            fill
-            style={{ objectFit: 'cover' }}
+            width={portrait.width}
+            height={portrait.height}
+            sizes="100vw"
+            placeholder="blur"
+            blurDataURL={portrait.blurDataURL}
             preload={true}
           />
-        </div>
-        <div>
+        </figure>
+        <div className={styles.content}>
           <MDXRemote source={about.content} />
         </div>
-      </div>
+      </article>
     </>
   );
 }
