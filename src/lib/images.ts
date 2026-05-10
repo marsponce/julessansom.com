@@ -16,7 +16,11 @@ export async function getImageData(imagePath: string) {
 
   const { width, height } = await sharp(buffer).metadata();
 
-  const blurBuffer = await sharp(buffer).resize(8).blur().toBuffer();
+  const blurBuffer = await sharp(buffer)
+    .resize(8)
+    .blur()
+    .toFormat('webp')
+    .toBuffer();
 
   const blurDataURL = `data:image/webp;base64,${blurBuffer.toString('base64')}`;
 
