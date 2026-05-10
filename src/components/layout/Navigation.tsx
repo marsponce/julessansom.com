@@ -53,8 +53,10 @@ export function Nav({ className, children }: NavProps) {
   const pathname = usePathname();
   const isIndex = pathname === '/';
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [openedOn, setOpenedOn] = useState<string | null>(null);
+  const isOpen = openedOn !== null && openedOn === pathname;
+
   useEffect(() => {
     const visited = localStorage.getItem('visited');
 
@@ -94,7 +96,7 @@ export function Nav({ className, children }: NavProps) {
           enter site <IoArrowForwardOutline />
         </span>
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setOpenedOn(isOpen ? null : pathname)}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
           data-open={isOpen}
@@ -118,7 +120,6 @@ export function Nav({ className, children }: NavProps) {
                   <Link
                     href={href}
                     aria-current={isCurrent ? 'page' : undefined}
-                    onClick={() => setIsOpen(false)}
                   >
                     {icon ?? label}
                   </Link>
