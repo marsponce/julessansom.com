@@ -40,7 +40,7 @@ export type WorksItem = {
   slug: string;
   title: string;
   image: string;
-  content: string; // the `description` markdown field from frontmatter becomes content after parsing
+  content: string;
 };
 
 export const getAbout = () => getSingleton<AboutPage>('about.md');
