@@ -6,7 +6,7 @@
     z-index: 3;
     position: fixed;
     font-size: 2rem;
-    height: 100vh;
+    height: 100dvh;
     width: 100lvw;
     transition: transform 0.6s;
     transform: translateY(-100%);
@@ -24,6 +24,7 @@
       mix-blend-mode: multiply;
       opacity: 0.2;
     }
+    overflow: hidden;
   }
 
   .navUi {

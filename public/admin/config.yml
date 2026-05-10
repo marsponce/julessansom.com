@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: dev
+  branch: 4-ticket-integrate-decap-cms
 
 # local_backend: true
 
